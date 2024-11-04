@@ -1,23 +1,23 @@
 {% set name = "backports.tarfile" %}
-{% set version = "1.0.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/backports.tarfile-{{ version }}.tar.gz
-  sha256: 2688f159c21afd56a07b75f01306f9f52c79aebcc5f4a117fb8fbb4445352c75
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/backports_tarfile-{{ version }}.tar.gz
+  sha256: d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python >=3.8
-    - setuptools >=56
+    - setuptools >=61.2
     - setuptools-scm >=3.4.1
     - pip
     - backports
